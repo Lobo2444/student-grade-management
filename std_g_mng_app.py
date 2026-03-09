@@ -57,8 +57,6 @@ def input_errorhandling(prompt):
             print("Insert an integer not string")
 
 
-#-----------------------
-#-----------------------
 
 
 
