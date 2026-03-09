@@ -1,3 +1,26 @@
+class student:
+
+    def __init__(self,name,marks):
+
+        self.name=name
+        self.marks=marks
+        self.total=sum(marks.values())
+        self.average=self.total / len(marks)
+
+
+
+std_data_scheme={}
+
+
+
+
+
+
+
+
+
+
+
 def menu_input(promptmenu):
     while True:
         try:
@@ -35,7 +58,6 @@ def input_errorhandling(prompt):
 
 
 #-----------------------
-std_data_scheme={}
 #-----------------------
 
 
@@ -75,16 +97,14 @@ def std_add():
             
         
         stdsub=["English","Tamil","Science","Social","Maths"]   
-        submarks={}
+        marks={}
         for sub in stdsub:
-            submarks[sub]=input_errorhandling(f"{sub} Mark: ")
-                 
-        totalmarks=sum(submarks.values())
-        avgmarks=totalmarks/len(submarks)
-        submarks['Total Mark']=totalmarks
-        submarks["Average Mark "]=avgmarks
+            marks[sub]=input_errorhandling(f"{sub} Mark: ")
 
-        std_data_scheme[stdName]=submarks
+        student=Student(stdName,marks)
+
+        std_data_scheme[stdName]=student
+
         print("Student Data is ADDED Successfully!!!")
         retmenu=returntomenu("Do you want to continue[Y/N]:")
         if retmenu == 'y':
